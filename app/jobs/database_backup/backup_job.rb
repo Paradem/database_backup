@@ -41,7 +41,7 @@ module DatabaseBackup
         acl: "private"
       })
 
-      FileUtils.rm_f(backup_file)
+      FileUtils.rm_f("#{backup_file}.gz")
     end
   end
 end
