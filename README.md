@@ -29,6 +29,12 @@ the bucket.
 
 ### Environment variables that you need
 
+SPACES_KEY
+SPACES_SECRET
+DOMAIN
+REGION
+BACKUP_BUCKET
+
 ```ruby
   config.good_job.enable_cron = (ENV["FLY_PROCESS_GROUP"] == "app")
   config.good_job.cron = {
@@ -40,7 +46,7 @@ the bucket.
         domain: ENV["DOMAIN"],
         region: ENV["REGION"],
         bucket: ENV["BACKUP_BUCKET"],
-        endpoint: "https://#{ENV["REGION"].digitaloceanspaces.com",
+        endpoint: "https://#{ENV["REGION"]}.digitaloceanspaces.com"
       },
       class: "DatabaseBackup::PruneJob",
       description: "Clear out backups over 30 days old"
@@ -53,7 +59,7 @@ the bucket.
         spaces_key: ENV["SPACES_KEY"],
         spaces_secret: ENV["SPACES_SECRET"],
         domain: ENV["DOMAIN"],
-        endpoint: "https://#{ENV["REGION"].digitaloceanspaces.com",
+        endpoint: "https://#{ENV["REGION"]}.digitaloceanspaces.com",
         region: ENV["REGION"],
         bucket: ENV["BACKUP_BUCKET"]
       },
