@@ -10,7 +10,7 @@ module DatabaseBackup
       domain:,
       region:,
       bucket:,
-      endpont:
+      endpoint:
     )
       client = Aws::S3::Client.new(
         access_key_id: spaces_key,
