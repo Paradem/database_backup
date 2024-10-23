@@ -27,7 +27,7 @@ module DatabaseBackup
       objects.each do |obj|
         last_modified = obj.last_modified
         if last_modified < threshold_date
-          client.delete_object(bucket: space_name, key: obj.key)
+          client.delete_object(bucket:, key: obj.key)
         end
       end
     end
